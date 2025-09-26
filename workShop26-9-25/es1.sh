@@ -34,7 +34,7 @@ done
 git status
 
 git commit -m "Aggiunti tutti i file txt"
-echo #dicasi eko
+echo #da pronunciare eko ;)
 echo
 
 git log
