@@ -5,8 +5,9 @@ read -p "Inserisci percorso directory" path
 
 rm -rf $path
 
-#mkdir $path
-#cd $path
+# SOLUZIONE EQUIVALENTE
+# mkdir $path
+# cd $path
 # git init
 
 git init $path
