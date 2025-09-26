@@ -10,8 +10,9 @@ rm -rf $path
 # git init
 
 git init $path
+#Ricordarsi sempre della posizione della shell e della posizione dello script
 cd $path
-#POS???
+
 
 #2) Aggiungete 10 file txt al repo, e 2 file .md
 for i in {1..10};
