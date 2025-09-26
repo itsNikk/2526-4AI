@@ -25,7 +25,7 @@ touch x.md
 
 git status
 
-#3) add all txts
+#3) add all txts. EVITARE git add * e git add . :(
 for i in $(seq 1 10)
 do
 	git add f$i.txt
