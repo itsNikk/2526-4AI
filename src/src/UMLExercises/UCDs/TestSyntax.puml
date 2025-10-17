@@ -1,0 +1,10 @@
+@startuml
+''commento
+:giocatore: as g
+
+(registrarsi al sito) as reg
+(creare profilo) as c
+
+g - reg
+g -- c
+@enduml
