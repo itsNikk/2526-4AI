@@ -1,10 +1,31 @@
 @startuml
-''commento
-:giocatore: as g
+''Non c'è molto controllo sul posizionamento degli elementi grafici,
+'' se non tramite la lunghezza delle frecce.
+
+:Giocatore: as g
+:Coach: as c
+:Receptionist: as r
+:Ospite: as o
+:Admin: as a
+:PayArena Service: as pServ
 
 (registrarsi al sito) as reg
-(creare profilo) as c
+(creare profilo) as cprof
+(Prenotare postazione) as pPost
+(Pagare quota) as pay
+(Partecipare tornei) as pTor
+(Gestire membri squadra) as squad
+(Monitorare prestazione giocatori) as stastG
 
 g - reg
-g -- c
+g - pPost
+g - pTor
+
+c - squad
+c - stastG
+
+pPost ..> pay : <<include>>
+reg ..> cprof : <<include>>
+pTor ..> pay : <<include>>
+
 @enduml
