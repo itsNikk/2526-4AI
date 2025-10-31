@@ -1,0 +1,39 @@
+@startuml
+''Non c'è molto controllo sul posizionamento degli elementi grafici,
+'' se non tramite la lunghezza delle frecce.
+
+
+title Nebula
+left to right direction
+
+''g=giocvatore
+:Coach: as c
+:Giocatore: as g
+rectangle {
+(gestire squadra)
+(Registrarsi)
+(Prenotare postazione)
+
+usecase pTorn as "partecipare tornei
+---
+E.P.: se non registrato
+"
+
+
+(pagare quota)
+}
+
+c -- (gestire squadra)
+
+g -- (pagare quota)
+g - (Prenotare postazione)
+g -- (Registrarsi)
+g -- pTorn
+
+pTorn ..> (pagare quota) : <<include>>
+(Prenotare postazione) ..> (pagare quota) : <<include>>
+
+pTorn <. (Registrarsi) : <<extend>>
+
+
+@enduml
