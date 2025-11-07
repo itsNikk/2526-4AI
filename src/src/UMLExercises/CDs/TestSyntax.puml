@@ -1,0 +1,36 @@
+@startuml
+
+
+
+package PACK{
+
+abstract class X{
+-y:Y[]
+
++ {abstract} getElems(x : int) : double
+
+}
+
+class Y {
+
+
+}
+
+class A {
++  getElems(x : int) : double
+}
+
+}
+
+interface K{}
+
+
+note left of X
+balbalbalblabl
+end note
+
+X <|-- A
+X "1" --> "0..20" Y
+
+
+@enduml
