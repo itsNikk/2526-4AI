@@ -1,0 +1,67 @@
+@startuml
+' Packages
+package users {
+  abstract class User {
+    - id : int
+    - name : String
+    - email : String
+    + login()
+    + logout()
+  }
+
+  class Customer {
+    + makeReservation()
+  }
+
+  class MaintenanceOperator {
+    + performMaintenance()
+  }
+
+  User <|-- Customer
+  User <|-- MaintenanceOperator
+}
+
+package vehicles {
+  class City {
+    - name : String
+    - scooters : Scooter[]
+  }
+
+  class Scooter {
+    - id : int
+    - batteryLevel : int
+  }
+
+  City "1" *-- "*" Scooter
+  Customer "1" --> "0..1" Scooter
+}
+
+package payments {
+  class Payment {
+    - amount : double
+    - timestamp : Date
+  }
+
+  Customer "1" --> "*" Payment
+}
+
+package services {
+  interface RentalService {
+    + calculateCost(minutes : int) : double
+  }
+
+  class FixedRateRentalService {
+    - ratePerMinute : double
+    + calculateCost(minutes : int) : double
+  }
+
+  RentalService <|.. FixedRateRentalService
+}
+
+
+note right of payments
+    Non espressamente richiesto ma
+    potenzialmente utile
+end note
+
+@enduml
