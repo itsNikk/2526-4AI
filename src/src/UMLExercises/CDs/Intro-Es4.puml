@@ -1,0 +1,28 @@
+@startuml
+
+class Ordine{
+    -numeroOrdine:int
+    -data:Date
+    -totale:double
+}
+
+class Cliente{
+    -nome:String
+    -email:String
+}
+
+class Prodotto{
+    -nomeProdotto:String
+    -prezzo:double
+}
+
+Cliente "1" --> "0..*" Ordine
+
+Prodotto "0..*" -- "0..*" Ordine
+note right on link
+    E' abbastanza soddisfacente come relazione?
+    Manca qualcosa?
+    Pro? Contro?
+end note
+
+@enduml

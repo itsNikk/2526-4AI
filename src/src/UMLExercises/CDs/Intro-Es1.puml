@@ -1,0 +1,12 @@
+@startuml
+
+class Automobile {
+    -marca:String
+    -modello:String
+    -anno:int
+    +accendiMotore():void
+    +spegniMotore():void
+    -calcolaValoreAttuale():double
+}
+
+@enduml
