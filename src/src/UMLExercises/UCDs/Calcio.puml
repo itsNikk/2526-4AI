@@ -44,4 +44,9 @@ note left of save
     - salvare risultato a fine evento
 end note
 
+note top of gGio
+    Si poteva realizzare anche con due UC separati
+    discriminante: leggibilità/complessità
+end note
+
 @enduml
