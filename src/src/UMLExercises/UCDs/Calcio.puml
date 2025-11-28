@@ -6,9 +6,7 @@
 :Arbitro: as arb
 :Allenatore: as all
 :FIGC: as f
-:Squadra: as s
 :Presidenza: as pres
-:Giocatore: as gio
 
 '' Confini del sistema
 rectangle Calcio {
