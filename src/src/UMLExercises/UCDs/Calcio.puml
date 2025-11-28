@@ -18,11 +18,12 @@ rectangle Calcio {
     usecase desArb as "Designare arbitri"
     usecase showRes as "Visualizza risultato"
     usecase conv as "Convocare giocatore"
-    usecase gGio as "Gestione giocatore
-    "
+    usecase gGio as "Gestione giocatore"
     usecase aGIo as "acquistare giocatore"
     usecase vGio as "vendere giocatore"
     usecase printSched as "Stampare schedina"
+    usecase changeAll as (cambiare allenatore)
+
 }
 
 f -- cal
@@ -32,8 +33,7 @@ f -- desArb
 all -- conv
 
 arb --> save
-f -- save
-
+pres -- changeAll
 f -- showRes
 
 pres -- gGio
