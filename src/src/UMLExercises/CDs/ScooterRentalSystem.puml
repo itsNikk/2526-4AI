@@ -5,11 +5,12 @@ package users {
     - id : int
     - name : String
     - email : String
-    + login()
-    + logout()
+    + {abstract} login()
+    + {abstract} logout()
   }
 
   class Customer {
+    -scooter:Scooter
     + makeReservation()
   }
 
@@ -25,6 +26,9 @@ package vehicles {
   class City {
     - name : String
     - scooters : Scooter[]
+
+    +addScooter(scooter:Scooter):void
+    +removeScooter(scooter:Scooter):void
   }
 
   class Scooter {
@@ -32,7 +36,7 @@ package vehicles {
     - batteryLevel : int
   }
 
-  City "1" *-- "*" Scooter
+  City "1" *-- "0..*" Scooter
   Customer "1" --> "0..1" Scooter
 }
 
