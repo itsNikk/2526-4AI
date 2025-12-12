@@ -1,0 +1,20 @@
+@startuml
+''Versione 2 - rel.unilaterale Utente -> Libro
+'' Pro? Contro? Rispetto a V1?
+
+class Libro {
+    -titolo:String
+    -autore:String
+    -ISBN:int
+    -prestato:boolean
+}
+
+class Utente{
+    -nome:String
+    -email:String
+    -libriPresi:Libro[]
+}
+
+Utente "1" --> "0..*" Libro
+
+@enduml

@@ -1,0 +1,63 @@
+@startuml
+''Non c'è molto controllo sul posizionamento degli elementi grafici,
+'' se non tramite la lunghezza delle frecce.
+
+
+title Nebula
+left to right direction
+
+''g=giocvatore
+:Coach: as c
+:Giocatore: as g
+:Reception: as r
+:Ospite: as o
+:PayService: as ps
+:Admin:
+
+rectangle NebulaSys {
+    (gestire squadra)
+    (Registrarsi)
+    (Prenotare postazione)
+
+    usecase pTorn as "partecipare tornei
+    ---
+    E.P.: se non registrato
+    "
+
+    (Visualizzare tornei)
+    (Monitorare prestazioni dei giocatori)
+    (Verificare accessi)
+    (Controllo pagamenti)
+    (creare tornei)
+    (gestire premi)
+
+    (pagare quota)
+}
+
+c -- (gestire squadra)
+
+g --> (pagare quota)
+g - (Prenotare postazione)
+g -- (Registrarsi)
+g -- pTorn
+
+r -- (creare tornei)
+r -- (Verificare accessi)
+r -- (Controllo pagamenti)
+r -- (gestire premi)
+
+ps - (pagare quota)
+
+pTorn ..> (pagare quota) : <<include>>
+(Prenotare postazione) ..> (pagare quota) : <<include>>
+
+pTorn <. (Registrarsi) : <<extend>>
+
+note right of NebulaSys
+    RNF:
+    - Arena aperta 24/7
+    - Sistema accessibile anche da tablet
+    -2FA
+end note
+
+@enduml

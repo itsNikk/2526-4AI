@@ -1,0 +1,30 @@
+@startuml
+
+:Bob:
+
+rectangle System {
+    usecase ID as "
+    acquista prodotto
+    --
+    E.P.:
+    - se profilo non presente
+    "
+
+    (Creare profilo) as p
+
+
+}
+:Bob: -- ID
+
+ID <.. p : <<extend>>
+
+''SRS
+note left of System
+RNF:
+- 2FA
+- facile da usare per persone oltre i 40 anno
+- ecc
+- s
+- d
+end note
+@enduml

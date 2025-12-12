@@ -1,0 +1,20 @@
+@startuml
+''Versione 1 - rel.bilaterale
+'' Pro? Contro?
+class Libro {
+    -titolo:String
+    -autore:String
+    -ISBN:int
+    -prestato:boolean
+    -utenteCorrente:Utente
+}
+
+class Utente{
+    -nome:String
+    -email:String
+    -libriPresi:Libro[]
+}
+
+Utente "1" -- "0..*" Libro
+
+@enduml

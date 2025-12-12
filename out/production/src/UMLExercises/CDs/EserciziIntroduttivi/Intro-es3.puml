@@ -1,0 +1,24 @@
+@startuml
+
+abstract class Animale{
+    -nome:String
+    -eta:int
+    +{abstract}emettiVerso():void
+}
+
+class Cane {
+    -stazza:String
+    +emettiVerso():void
+    +cercaOggetto(o:Object):Object
+}
+
+class Gatto{
+    -casalingo:boolean
+    +emettiVerso():void
+    +faLeFusa():void
+}
+
+
+Animale <|-- Cane
+Animale <|-- Gatto
+@enduml

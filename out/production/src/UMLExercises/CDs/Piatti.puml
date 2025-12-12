@@ -1,0 +1,37 @@
+@startuml
+
+''left to right direction
+
+''menu?
+''1) Concrete Class menu
+''2) attributo/campo di classe
+ '' di Rist di tipo []
+''3) metodo di Rist (!)
+''4) tutto string/array di
+
+''KISS = KEEP IT SIMPLE, STUPID
+
+
+abstract class Piatto{
+    -name:String
+    +{abstract}prepara():void
+}
+
+Piatto <|-- Pasta
+
+class Pasta{
+    +prepara()
+}
+
+class Menu {
+    - piatti: Piatto[]
+}
+
+class Ristorante {
+    -menu:Menu
+}
+
+Menu "1" <--"1" Ristorante
+Piatto "1..*" <-- "1"Menu
+
+@enduml
