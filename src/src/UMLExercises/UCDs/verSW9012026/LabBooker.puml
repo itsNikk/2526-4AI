@@ -1,0 +1,55 @@
+@startuml
+:Docente: as doc
+:DocenteStrutturato: as docS
+:Dottorando: as phd
+:Responsabile di Dipartimento: as respDip
+:Tecnico: as tech
+
+:Visitatore: as visit
+
+:UniRegistry: as uReg
+
+rectangle LabBooker {
+    (Prenotare laboratorio) as pren
+    (Verificare disponibilità) as checkDisp
+    (Verificare capienza) as checkCap
+    (Cancellare prenotazione) as cancPren
+    (Controllare abilitazione docenti) as checkAbiDoc
+    (Annullare prenotazione) as anPren
+    (registrare manutenzione) as regMan
+    (Notificare docenti) as notDoc
+
+    (Consultare occupazione laboratori) as visonLab
+
+    usecase lock as "
+    Bloccare fasce per manutenzione
+    --
+    E.P: Se ci sono prenotazioni
+    "
+}
+
+docS --|> doc
+phd --|> doc
+respDip --|> doc
+
+doc -- pren
+doc -- cancPren
+pren ..> checkCap : <<include>>
+pren ..> checkDisp : <<include>>
+pren ..> checkAbiDoc : <<include>>
+lock <.. notDoc : <<extend>>
+tech -- lock
+tech -- regMan
+
+uReg -- checkAbiDoc
+respDip -- anPren
+
+visit -- visonLab
+
+note top of LabBooker
+    RNF:
+    - UI: utilizzo tablet
+    - Prestazioni: <1sec
+    -
+end note
+@enduml
