@@ -1,0 +1,56 @@
+@startuml
+left to right direction
+
+:Visitatore: as V
+:Giocatore: as G
+:Giocatore PRO: as GPRO
+:Organizzatore: as O
+:Arbitro: as A
+:Stripe: as S
+
+rectangle "TourneyHub System" {
+  usecase "Consultare tornei" as UC1
+  usecase "Iscriversi a torneo" as UC2
+  usecase "Effettuare pagamento" as UC3
+  usecase "Creare torneo" as UC4
+  usecase "Gestire risultati" as UC5
+  usecase "Generare classifica" as UC6
+  usecase "Assegnare premi" as UC7
+  usecase "Verificare posti disponibilil" as UC8
+  usecase "Verificare account" as UC9
+
+  UC2 ..> UC3 : <<include>>
+  UC2 ..> UC8 : <<include>>
+  UC2 ..> UC9 : <<include>>
+  UC5 ..> UC6 : <<include>>
+  UC6 ..> UC7 : <<include>>
+}
+
+' Generalizzazione Giocatore PRO
+GPRO --|> G
+
+' Relazioni attori-use cases
+V -- UC1
+G -- UC1
+G -- UC2
+O -- UC4
+O -- UC5
+A -- UC5
+S -- UC3
+
+note right of UC2
+  Vincoli:
+  - GPRO: accesso a 10% posti extra
+end note
+
+note right of UC5
+  Organizzatore: accesso completo
+  Arbitro: solo inserimento punteggi
+end note
+
+note left of UC6
+  Generazione automatica dopo
+  aggiornamento risultati
+end note
+
+@enduml
