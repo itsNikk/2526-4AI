@@ -1,0 +1,39 @@
+@startuml
+left to right direction
+
+:Partecipante:
+:Partecipante VIP: as VIP
+:Organizzatore:
+:Staffer:
+:Visitatore Pubblico: as Guest
+:PayPal:
+
+VIP --|> Partecipante
+
+rectangle EventForge {
+
+  usecase "Creare Evento" as UC1
+  usecase "Acquistare Biglietto" as UC2
+  usecase "Eseguire Pagamento" as UC3
+  usecase "Aggiornare Attività" as UC4
+  usecase "Generare Report Finale" as UC5
+  usecase "Consultare Eventi Pubblici" as UC6
+
+  :Organizzatore: --> UC1
+
+  :Partecipante: --> UC2
+  VIP --> UC2 : posti extra
+
+  UC2 --> UC3 <<include>>
+  UC4 --> UC5 <<include>>
+
+  :Staffer: --> UC4 : permessi limitati
+
+  Guest--> UC6
+  :Partecipante: --> UC6
+  :Organizzatore: --> UC6
+
+  UC3 --> :PayPal:
+}
+
+@enduml
