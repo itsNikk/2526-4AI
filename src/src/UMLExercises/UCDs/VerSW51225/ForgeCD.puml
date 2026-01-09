@@ -1,0 +1,82 @@
+@startuml
+
+package Eventi {
+  abstract class Evento {
+    +id: String
+    +titolo: String
+    +tema: String
+    +dataInizio: Date
+    +dataFine: Date
+    +stato: StatoEvento
+    +capienza: int
+    +costoBiglietto: double
+  }
+
+  class EventoSingolo
+  class EventoMultiSala {
+    +numeroSale: int
+    +capienzaPerSala: int
+  }
+
+  Evento <|-- EventoSingolo
+  Evento <|-- EventoMultiSala
+}
+
+package Utenti {
+  abstract class Utente {
+    +username: String
+    +email: String
+    +dataRegistrazione: Date
+  }
+
+  class Partecipante {
+    +livelloFedelta: int
+    +isVIP: boolean
+  }
+
+  class Organizzatore {
+    +ragioneSociale: String
+    +partitaIVA: String
+  }
+
+  class Staffer {
+    +codiceBadge: String
+  }
+
+  Utente <|-- Partecipante
+  Utente <|-- Organizzatore
+  Utente <|-- Staffer
+}
+
+package Prenotazioni {
+  class Prenotazione {
+    +timestamp: Date
+    +importo: double
+    +statoPagamento: StatoPagamento
+  }
+
+  Evento "1" *-- "0..*" Prenotazione
+  Partecipante "1" -- "0..*" Prenotazione
+}
+
+package Attivita {
+  class Attivita {
+    +dataOra: Date
+    +sala: String
+    +stato: StatoAttivita
+  }
+
+  Evento "1" *-- "0..*" Attivita
+}
+
+package Report {
+  class ReportFinale
+  class Sezione {
+    +titolo: String
+    +contenuto: String
+  }
+
+  Evento "1" *-- "1" ReportFinale
+  ReportFinale "1" *-- "0..*" Sezione
+}
+@enduml
