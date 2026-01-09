@@ -14,7 +14,7 @@ public class Main {
         System.out.print("Dammi un char, please:");
         String charToSearch = s.nextLine();
 
-        int index = 0;
+        int index;
         try {
             index = s.nextInt();
             char charRes = getChar(str, index);
