@@ -1,0 +1,53 @@
+name: Sync to ANNO-DI-QUARTA
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout destination repo
+        uses: actions/checkout@v4
+        with:
+          repository: Dipartimento-Informatica-OSDB/ANNO-DI-QUARTA
+          token: ${{ secrets.SYNC_PAT }}
+          path: destination
+
+      - name: Sync source files
+        run: |
+          mkdir -p destination/TPSI/4AI
+          rsync -av --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='target' \
+            --exclude='build' \
+            --exclude='*.class' \
+            --exclude='*.jar' \
+            --exclude='*.war' \
+            --exclude='.gradle' \
+            --exclude='.mvn' \
+            --exclude='.idea' \
+            --exclude='.vscode' \
+            --exclude='*.iml' \
+            --exclude='.DS_Store' \
+            ./ destination/TPSI/4AI/
+
+      - name: Commit and push
+        run: |
+          cd destination
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          if ! git diff --quiet || ! git diff --staged --quiet; then
+            git commit -m "Sync 4AI: ${{ github.event.head_commit.message }}" \
+                       -m "From: ${{ github.repository }}@${{ github.sha }}"
+            git push
+          fi
