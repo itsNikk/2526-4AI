@@ -2,8 +2,13 @@ package Exceptions.Exercises.CF;
 
 import Exceptions.Exercises.CF.cfExceptions.CodiceFiscaleNonValidoException;
 
+
 public class CodiceFiscale {
+
+    private final String cod;
+
     private final int MAX_LENGTH = 16;
+
 
     //Implementate questo esercizio sennza usare isLetterOrDigit oppure is Uppercase
     public CodiceFiscale(String cf) throws CodiceFiscaleNonValidoException {
@@ -18,6 +23,8 @@ public class CodiceFiscale {
             throw new CodiceFiscaleNonValidoException("CTRL CHAR non valido");
         }
 
+
+        this.cod = cf;
         /*
          * 1) SPLIT + FOR
          * 2) charAt + for
@@ -26,5 +33,8 @@ public class CodiceFiscale {
          */
     }
 
-
+    @Override
+    public String toString() {
+        return cod;
+    }
 }
