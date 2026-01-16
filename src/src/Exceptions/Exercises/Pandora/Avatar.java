@@ -16,7 +16,7 @@ public class Avatar {
         this.r = new Random();
     }
 
-    public void attacca(PostazioneRDA postazioneRDA) throws ArmaMalfunzionanteException{
+    public void attacca(PostazioneRDA postazioneRDA) throws ArmaMalfunzionanteException {
         double attackProb = r.nextDouble();
 
         if (attackProb <= 0.5) {
