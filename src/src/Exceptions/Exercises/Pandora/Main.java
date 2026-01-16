@@ -11,8 +11,8 @@ public class Main {
             jake.attaccaPostazione(new PostazioneRDA());
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
-        } catch (ArmaMalfunzionanteException armaMalfunzionanteException){
-            return;
+        } catch (ArmaMalfunzionanteException armaMalfunzionanteException) {
+            System.out.println(armaMalfunzionanteException.getMessage());
         }
     }
 }
