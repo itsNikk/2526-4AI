@@ -1,4 +1,4 @@
-package Exceptions.Exercises.Pandora;
+package Exceptions.Exercises.Probability;
 
 import java.util.Random;
 
