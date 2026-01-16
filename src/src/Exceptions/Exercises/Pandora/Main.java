@@ -8,7 +8,7 @@ public class Main {
         try {
             Coordinata c = new Coordinata(564564645, 156561);
             Avatar jake = new Avatar("Jake", arma, 123);
-            jake.attacca(new PostazioneRDA());
+            jake.attaccaPostazione(new PostazioneRDA());
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         } catch (ArmaMalfunzionanteException armaMalfunzionanteException){
