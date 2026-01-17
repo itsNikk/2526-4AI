@@ -10,7 +10,10 @@
 :UniRegistry: as uReg
 
 rectangle LabBooker {
-    (Prenotare laboratorio) as pren
+    usecase pren as "
+    (Prenotare laboratorio)
+    --
+    E.P.: Se prenotazione lezione o esame"
     (Verificare disponibilità) as checkDisp
     (Verificare capienza) as checkCap
     (Cancellare prenotazione) as cancPren
@@ -36,7 +39,7 @@ doc -- pren
 doc -- cancPren
 pren ..> checkCap : <<include>>
 pren ..> checkDisp : <<include>>
-pren ..> checkAbiDoc : <<include>>
+pren <.. checkAbiDoc : <<extend>>
 lock <.. notDoc : <<extend>>
 tech -- lock
 tech -- regMan
