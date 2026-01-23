@@ -1,0 +1,16 @@
+Attori:
+	- Consigliere
+	- Capo Consigliere
+	- Consigliere eletto
+	- Sindaco
+	- Cittadino
+	X Distretto
+	- Consigliere Comunale
+RF
+	RF1: inviare com ai cittadini
+	RF2: richiedere sessioni straordinarie
+	RF3: Organizzare con Sindaco
+	RF4: Cons che mantiene tutte le prerogative del Capo
+RNF
+	RNF1: usare canali centralizzati
+	RNF2:
