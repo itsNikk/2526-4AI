@@ -1,0 +1,34 @@
+@startuml
+left to right direction
+
+''UNO UCD descrive chi fa cosa nel mio sistema.
+'' aiuta me (team) e cliente a comprenderci
+
+:User:
+:Padre:
+
+(uc1) as c1
+(uc2) as c2
+
+'' Negli UC solo  verbi
+usecase b as "
+buy online
+--
+E.P.: se non registrato
+"
+(register online) as p
+(creare fattura) as f
+
+:User: -- b
+:User: -- (register online)
+b <.. p : <<extend>>
+b ..> f  : <<include>>
+'' NO :Andrea: .. (Aprire porta)
+
+:Padre: -- c1
+:Padre: -- c2
+
+:Padre: <|-- User
+
+
+@enduml
