@@ -1,4 +1,4 @@
-package es3HotelMultiLivello.HotelManagement;
+package Exceptions.Exercises.es3HotelMultiLivello.HotelManagement;
 
 import java.util.ArrayList;
 

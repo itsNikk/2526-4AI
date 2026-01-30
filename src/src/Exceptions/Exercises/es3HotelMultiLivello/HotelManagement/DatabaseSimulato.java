@@ -1,6 +1,6 @@
-package es3HotelMultiLivello.HotelManagement;
+package Exceptions.Exercises.es3HotelMultiLivello.HotelManagement;
 
-import es3HotelMultiLivello.HotelExceptions.DatabaseException;
+import Exceptions.Exercises.es3HotelMultiLivello.HotelExceptions.DatabaseException;
 
 import java.util.ArrayList;
 import java.util.Random;

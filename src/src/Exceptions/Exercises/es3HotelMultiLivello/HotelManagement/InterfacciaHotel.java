@@ -1,8 +1,8 @@
-package es3HotelMultiLivello.HotelManagement;
+package Exceptions.Exercises.es3HotelMultiLivello.HotelManagement;
 
-import es3HotelMultiLivello.HotelExceptions.CameraOccupataException;
-import es3HotelMultiLivello.HotelExceptions.ClienteNonValidoException;
-import es3HotelMultiLivello.HotelExceptions.PrenotazioneException;
+import Exceptions.Exercises.es3HotelMultiLivello.HotelExceptions.CameraOccupataException;
+import Exceptions.Exercises.es3HotelMultiLivello.HotelExceptions.ClienteNonValidoException;
+import Exceptions.Exercises.es3HotelMultiLivello.HotelExceptions.PrenotazioneException;
 
 import java.util.ArrayList;
 
