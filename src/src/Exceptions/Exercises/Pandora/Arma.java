@@ -24,4 +24,9 @@ public class Arma {
     public void setBaseDamage(double baseDamage) {
         this.baseDamage = baseDamage;
     }
+
+    @Override
+    public String toString() {
+        return nome;
+    }
 }
