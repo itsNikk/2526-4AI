@@ -1,7 +1,7 @@
-package es21SistemaPagamentoOnline;
+package Exceptions.Exercises.es21SistemaPagamentoOnline;
 
-import es21SistemaPagamentoOnline.CustomExceptions.ConnessioneBancariaException;
-import es21SistemaPagamentoOnline.CustomExceptions.FrodeRilevataException;
+import Exceptions.Exercises.es21SistemaPagamentoOnline.CustomExceptions.ConnessioneBancariaException;
+import Exceptions.Exercises.es21SistemaPagamentoOnline.CustomExceptions.FrodeRilevataException;
 
 import java.util.Random;
 

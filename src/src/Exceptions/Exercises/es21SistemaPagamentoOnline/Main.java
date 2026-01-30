@@ -1,4 +1,4 @@
-package es21SistemaPagamentoOnline;
+package Exceptions.Exercises.es21SistemaPagamentoOnline;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
