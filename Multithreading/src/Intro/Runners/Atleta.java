@@ -2,16 +2,25 @@ package Intro.Runners;
 
 public class Atleta extends Thread {
 
-    private String name;
     private long startTime;
     private long endTime;
+
+    public Atleta(String nome) {
+        super(nome); //setName(name);
+    }
 
     @Override
     public void run() {
         startTime = System.currentTimeMillis();
 
         for (int i = 0; i < 10; i++) {
-            System.out.println(name + ": Step " + (i + 1));
+            try {
+                System.out.println(getName() + ": Step " + (i + 1));
+                sleep(300 + (int) (Math.random() * 500));
+            } catch (InterruptedException e) {
+                //che si fa quando qualcuno mi interrompe?
+                System.out.println(getName() + " ritirato / qualificato");
+            }
         }
 
         endTime = System.currentTimeMillis();
