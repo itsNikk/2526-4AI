@@ -16,7 +16,7 @@ public class Main {
 
         // il thread che chiama questo metodo, attende l'altro thread termine per avanzare
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000 + (int) (Math.random() * 1000));
             boolean r = new Random().nextBoolean();
             if (r) {
                 atleta.interrupt();
@@ -29,9 +29,10 @@ public class Main {
 
             System.out.println(atleta.getName() + " : Tempo gara:" + atleta.getRaceTime());
             System.out.println(atleta2.getName() + " : Tempo gara:" + atleta2.getRaceTime());
+            System.out.println("Gara conclusa");
 
         } catch (InterruptedException e) {
-
+            //Che si fa?
         }
 
 
