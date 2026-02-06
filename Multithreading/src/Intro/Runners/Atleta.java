@@ -20,6 +20,7 @@ public class Atleta extends Thread {
             } catch (InterruptedException e) {
                 //che si fa quando qualcuno mi interrompe?
                 System.out.println(getName() + " ritirato / qualificato");
+                break;
             }
         }
 
