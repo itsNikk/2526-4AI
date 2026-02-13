@@ -10,5 +10,7 @@ public class Counter {
         this.counter = tmp;
     }
 
-
+    public long getCounter() {
+        return counter;
+    }
 }
