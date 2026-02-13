@@ -17,19 +17,18 @@ public class Atleta extends Thread {
     public void run() {
         startTime = System.currentTimeMillis();
 
-        for (int i = 0; i < 10; i++) {
-            try {
+        try {
+            for (int i = 0; i < 10; i++) {
                 System.out.println(getName() + ": Step " + (i + 1));
                 sleep(300 + (int) (Math.random() * 500));
-            } catch (InterruptedException e) {
-                //che si fa quando qualcuno chiama interrupt su un qualunque Thread Atleta?
-                disqualified = true;
-                System.out.println(getName() + " ritirato / qualificato");
-                break;
             }
+            raceCompleted = true;
+            endTime = System.currentTimeMillis();
+        } catch (InterruptedException e) {
+            //che si fa quando qualcuno chiama interrupt su un qualunque Thread Atleta?
+            disqualified = true;
+            System.out.println(getName() + " ritirato / qualificato");
         }
-        raceCompleted = true;
-        endTime = System.currentTimeMillis();
     }
 
     public long getRaceTime() {
@@ -39,6 +38,7 @@ public class Atleta extends Thread {
     public boolean getDisqualified() {
         return disqualified;
     }
+
     public boolean getRaceCompleted() {
         return raceCompleted;
     }
