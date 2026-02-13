@@ -12,6 +12,7 @@ public class AdderThread extends Thread {
         for (int i = 0; i < Integer.MAX_VALUE; i++) {
             try {
                 sem.acquire();
+                System.out.print(getName() + ":" + (i + 1) + "\r");
                 counter.add(1);
                 sem.release();
             } catch (InterruptedException e) {

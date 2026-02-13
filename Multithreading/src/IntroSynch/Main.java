@@ -11,5 +11,6 @@ public class Main {
         adderThread2.join();
 
         System.out.println("Counter:" + AdderThread.counter.getCounter());
+        System.out.println("Simulation ended");
     }
 }
