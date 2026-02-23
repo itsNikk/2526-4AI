@@ -24,4 +24,8 @@ public abstract class Nave {
     public String getName() {
         return name;
     }
+
+    public boolean isAlive() {
+        return scafo > 0;
+    }
 }
