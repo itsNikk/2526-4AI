@@ -27,4 +27,8 @@ public class NaveMercantile extends Nave {
     public void shoot(Nave nave) {
 
     }
+
+    public int getCarico() {
+        return carico;
+    }
 }

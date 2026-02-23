@@ -1,7 +1,7 @@
 package Exceptions.Exercises.sportello13022026;
 
+import java.lang.classfile.instruction.StoreInstruction;
 import java.util.ArrayList;
-import java.util.Formattable;
 
 public class Convoglio {
     private ArrayList<NaveMercantile> mercantili;
@@ -44,5 +44,14 @@ public class Convoglio {
 
     public void printConvoyState() {
         System.out.println("Distanza dal porto: " + distance + " | " + "Navi totali: " + mercantili.size());
+    }
+
+    public int getTotalLoad() {
+        int totalLoad = 0;
+        for (NaveMercantile nave : getMercantiliVivi()) {
+            totalLoad += nave.getCarico();
+        }
+
+        return totalLoad;
     }
 }

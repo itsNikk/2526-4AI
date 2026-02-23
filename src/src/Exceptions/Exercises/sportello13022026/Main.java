@@ -46,6 +46,7 @@ public class Main {
             } catch (MunizioniEsauriteException e) {
                 System.out.println(e.getMessage());
             } catch (NaveAffondataException aff) {
+                System.out.println(aff.getMessage() + " è stato affondato.");
                 pirati.remove(p);
             }
 
@@ -54,7 +55,10 @@ public class Main {
             //f3.
             convoglio.step(1);
 
-            
+            if (convoglio.getTotalLoad() <= 0) {
+                System.out.println("HO PERSO");
+                return;
+            }
 
         }
 
