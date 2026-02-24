@@ -56,7 +56,7 @@ public class Main {
             convoglio.step(1);
 
             if (convoglio.getTotalLoad() <= 0) {
-                System.out.println("HO PERSO");
+               System.out.println("HO PERSO");
                 return;
             }
 
