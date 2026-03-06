@@ -1,4 +1,19 @@
 package ProdConsv1;
 
-public class Producer {
+public class Producer extends Thread {
+
+    private final Buffer buffer;
+
+    public Producer(Buffer b) {
+        this.buffer = b;
+    }
+
+    @Override
+    public void run() {
+        // Per 10 volte, fai +1 sul buffer
+        for (int i = 1; i <= 10; i++) {
+            buffer.setItem(i);
+            System.out.print("P:" + i);
+        }
+    }
 }
