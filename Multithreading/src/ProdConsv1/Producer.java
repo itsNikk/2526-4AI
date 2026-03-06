@@ -14,10 +14,10 @@ public class Producer extends Thread {
         for (int i = 1; i <= 10; i++) {
             try {
                 buffer.setItem(i);
+
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                System.out.println(e.getMessage());
             }
-            System.out.print("P:" + i);s
         }
     }
 }

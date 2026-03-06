@@ -7,25 +7,28 @@ public class Buffer {
     //QUANTI NE HO ORA...
     private int numItems = 0;
 
-    final int BUFFERSIZE = 3;
+    private final int BUFFERSIZE = 1;
 
-    //CONSUMER
+    //Chiamato da CONSUMER
     public synchronized int getItem() throws InterruptedException {
 
         if (numItems == 0) wait();
 
         this.numItems--;
-
+        System.out.print("C:" + valore);
+        notify();
         return this.valore;
     }
 
-    //PRODUCER
+    //Chiamato da PRODUCER
     public synchronized void setItem(int newVal) throws InterruptedException {
 
         if (numItems == BUFFERSIZE) wait();
 
         this.valore = newVal;
         this.numItems++;
+        System.out.print("P:" + valore);
+        notify();
     }
 
 }

@@ -14,7 +14,7 @@ public class Consumer extends Thread {
             //Non CANCELLA
             try {
                 v = buffer.getItem();
-                System.out.print("C:" + v);
+
             } catch (InterruptedException e) {
                 System.out.println(e.getMessage());
             }
