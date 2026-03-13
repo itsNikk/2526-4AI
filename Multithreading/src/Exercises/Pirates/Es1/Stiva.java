@@ -13,7 +13,7 @@ public class Stiva {
 
     public synchronized void deposit(Item item) throws InterruptedException {
         while (stiva.size() == MAX_SIZE) {
-            //CTRL+D: duplica riga
+            // CTRL+D: duplica riga
             System.out.println(Thread.currentThread().getName() + ": in attesa");
             wait();
         }
