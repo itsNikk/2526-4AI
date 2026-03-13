@@ -24,7 +24,7 @@ public class Stiva {
 
     public synchronized Item getItem() throws InterruptedException {
         while (stiva.isEmpty()) wait();
-        Item i = stiva.getFirst();
+        Item i = stiva.removeFirst();
         notifyAll();
         return i;
     }
