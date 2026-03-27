@@ -11,9 +11,7 @@ public class Main {
 
         ParkingLot parkingLot = new ParkingLot(maxCapacity);
 
-        for (int i = 0; i < maxVehicles; i++) {
-            vehicles.add(new Auto("AUTO-" + (i + 1), parkingLot));
-        }
+        for (int i = 0; i < maxVehicles; i++) vehicles.add(new Auto("AUTO-" + (i + 1), parkingLot));
 
         for (Auto a : vehicles) a.start();
         for (Auto a : vehicles) a.join();

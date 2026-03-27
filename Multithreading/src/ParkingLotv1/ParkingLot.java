@@ -19,4 +19,12 @@ public class ParkingLot {
         System.out.println("L'auto " + auto.getName() + " prende posto. posti disponibili " + postiDisponibili);
 
     }
+
+    public synchronized void exit(Auto auto) {
+
+        postiDisponibili++;
+        System.out.println("L'auto " + auto.getName() + "esce. posti disponibili: " + postiDisponibili);
+        notifyAll();
+    }
+
 }

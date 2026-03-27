@@ -23,6 +23,7 @@ public class Auto extends Thread {
             // se entra parcheggia
             sleep(3000 + random.nextInt(5000));
             //esce
+            parkingLot.exit(this);
 
         } catch (InterruptedException e) {
             interrupt();
