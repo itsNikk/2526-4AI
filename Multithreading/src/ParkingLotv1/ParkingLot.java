@@ -2,11 +2,11 @@ package ParkingLotv1;
 
 public class ParkingLot {
     private int postiDisponibili;
-    private final int CAPACITY;
+    private final int PARKINGLOT_MAX_CAPACITY;
 
-    public ParkingLot(int capacity) {
-        this.CAPACITY = capacity;
-        this.postiDisponibili = CAPACITY;
+    public ParkingLot(int maxCapacity) {
+        this.PARKINGLOT_MAX_CAPACITY = maxCapacity;
+        this.postiDisponibili = PARKINGLOT_MAX_CAPACITY;
     }
 
     public synchronized void enter(Auto auto) throws InterruptedException {
