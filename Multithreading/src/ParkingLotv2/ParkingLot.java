@@ -1,4 +1,4 @@
-package ParkingLotv1;
+package ParkingLotv2;
 
 public class ParkingLot {
     private int postiDisponibili;
@@ -9,21 +9,21 @@ public class ParkingLot {
         this.postiDisponibili = PARKINGLOT_MAX_CAPACITY;
     }
 
-    public synchronized void enter(Auto auto) throws InterruptedException {
-        while (postiDisponibili == 0) {
+    public synchronized void enter(Veicolo auto) throws InterruptedException {
+        while (postiDisponibili < auto.getType().getGrandezzaVeicolo()) {
             System.out.println("L'auto " + auto.getName() + " in attesa. posti disponibili: " + postiDisponibili);
             wait();
         }
 
-        postiDisponibili--;
+        postiDisponibili -= auto.getType().getGrandezzaVeicolo();
         System.out.println("L'auto " + auto.getName() + " prende posto. posti disponibili " + postiDisponibili);
 
     }
 
-    public synchronized void exit(Auto auto) {
+    public synchronized void exit(Veicolo veicolo) {
 
-        postiDisponibili++;
-        System.out.println("L'auto " + auto.getName() + "esce. posti disponibili: " + postiDisponibili);
+        postiDisponibili += veicolo.getType().getGrandezzaVeicolo();
+        System.out.println("L'auto " + veicolo.getName() + "esce. posti disponibili: " + postiDisponibili);
         notifyAll();
     }
 
