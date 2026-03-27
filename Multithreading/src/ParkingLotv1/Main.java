@@ -5,6 +5,12 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
+
+        /*
+        * 1) il parcheggio chuide dopo X secondi.
+        * 2) NOn tutti i veicoli sono uguali. Auto prende un posto solo. un camion ne prende 2
+        * 3) Ogni auto vuole un posto specifico
+         */
         final int maxCapacity = 5;
         final int maxVehicles = 10;
         List<Auto> vehicles = new ArrayList<>();
