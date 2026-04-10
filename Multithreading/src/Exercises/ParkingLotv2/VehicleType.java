@@ -1,4 +1,4 @@
-package ParkingLotv2;
+package Exercises.ParkingLotv2;
 
 public enum VehicleType {
     AUTO(1), CAMION(2), AUTOBUS(3);

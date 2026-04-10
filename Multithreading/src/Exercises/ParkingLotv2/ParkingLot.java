@@ -1,4 +1,4 @@
-package ParkingLotv2;
+package Exercises.ParkingLotv2;
 
 public class ParkingLot {
     private int postiDisponibili;

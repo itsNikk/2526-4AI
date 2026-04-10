@@ -1,4 +1,4 @@
-package ParkingLotv2;
+package Exercises.ParkingLotv2;
 
 import java.util.ArrayList;
 import java.util.List;
