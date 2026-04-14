@@ -21,6 +21,7 @@ public class ProcessingChainv3Main {
                 return value + 10;
             }
         });
+        //Sintassi equivalente a quella sopra, ma più compatta e possibile grazie alle lambda
         ChainProcessor c2 = new ChainProcessor(1, b2, b3, K, value -> value * 2);
         ChainProcessor c3 = new ChainProcessor(1, b3, b4, K, value -> Math.abs(value - 50));
 
