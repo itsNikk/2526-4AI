@@ -1,4 +1,4 @@
-package Exercises.JoinAndCleanup;
+package Exercises.JoinAndCleanup.v1;
 
 import java.util.Random;
 
