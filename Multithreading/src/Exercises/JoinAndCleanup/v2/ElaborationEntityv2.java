@@ -2,11 +2,11 @@ package Exercises.JoinAndCleanup.v2;
 
 import java.util.Random;
 
-public class ElaborationEntity extends Thread {
+public class ElaborationEntityv2 extends Thread {
 
     private final Random random;
 
-    public ElaborationEntity(String nome) {
+    public ElaborationEntityv2(String nome) {
         super(nome);
         this.random = new Random();
     }
