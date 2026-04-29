@@ -10,7 +10,7 @@ public class ControlTower {
         this.libere = piste;
     }
 
-    public synchronized int assegnaPista(Thread t) throws InterruptedException {
+    public synchronized int assignStrip(Thread t) throws InterruptedException {
         while (libere == 0) wait();
 
         int pista = piste - libere + 1;
@@ -18,7 +18,7 @@ public class ControlTower {
         return pista;
     }
 
-    public synchronized void liberaPista(Thread t) {
+    public synchronized void freeStrip(Thread t) {
         libere++;
         notifyAll();
     }

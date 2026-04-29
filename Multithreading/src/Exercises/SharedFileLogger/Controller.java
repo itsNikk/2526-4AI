@@ -21,13 +21,13 @@ public class Controller extends Thread {
     public void run() {
         try {
             for (int i = 1; i <= ATTERRAGGI; i++) {
-                int pista = torre.assegnaPista(this);
+                int pista = torre.assignStrip(this);
                 logger.writeToFile("autorizza atterraggio #" + i + " su pista " + pista);
 
                 Thread.sleep(2000 + random.nextInt(2000));
                 logger.writeToFile("atterraggio #" + i + " completato, pista " + pista + " libera");
 
-                torre.liberaPista(this);
+                torre.freeStrip(this);
             }
             logger.writeToFile("turno completato.");
 
