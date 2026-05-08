@@ -54,6 +54,7 @@ public class Terminal {
     }
 
     public void occupaGateNazionale(Volo volo) {
+
     }
 
     public void rilasciaGateNazionale(Volo volo) {
