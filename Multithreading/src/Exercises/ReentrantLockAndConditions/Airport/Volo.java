@@ -19,7 +19,7 @@ public class Volo extends Thread {
             if (type == TipoVolo.INTERNAZIONALE) {
                 terminal.occupaGateInternazionale(this);
             } else {
-                terminal.occupaGatenNazionale(this);
+                terminal.occupaGateNazionale(this);
             }
             sleep(3500);
             if (type == TipoVolo.INTERNAZIONALE) {

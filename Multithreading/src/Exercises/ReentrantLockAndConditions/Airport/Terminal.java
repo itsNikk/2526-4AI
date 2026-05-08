@@ -53,7 +53,7 @@ public class Terminal {
         }
     }
 
-    public void occupaGatenNazionale(Volo volo) {
+    public void occupaGateNazionale(Volo volo) {
     }
 
     public void rilasciaGateNazionale(Volo volo) {
