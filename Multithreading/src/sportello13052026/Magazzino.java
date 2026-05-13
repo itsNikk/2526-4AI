@@ -13,7 +13,7 @@ public class Magazzino {
         this.buffer = new ArrayList<>();
     }
 
-
+    //chiamato solo dai Prod...
     public synchronized void deposita(Materiale materiale) throws InterruptedException {
         //fintanto che so' pien'....
         while (buffer.size() == MAX_CAPACITY) wait();
@@ -23,8 +23,13 @@ public class Magazzino {
         notifyAll();
     }
 
-    public Materiale preleva(){
-        
+    public synchronized Materiale preleva() throws InterruptedException {
+
+        while (buffer.isEmpty()) wait();
+
+        Materiale m = buffer.get(0);
+        notifyAll();
+        return m;
     }
 
     public int getMAX_CAPACITY() {
