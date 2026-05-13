@@ -28,7 +28,9 @@ public class Magazzino {
         while (buffer.isEmpty()) wait();
 
         Materiale m = buffer.get(0);
+        buffer.remove(m);
         notifyAll();
+        System.out.println("rimosso materiale: (" + buffer.size() + " / " + MAX_CAPACITY + ")");
         return m;
     }
 
